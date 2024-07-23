@@ -1,0 +1,954 @@
+01)October Marathon
+Chef organised a 
+30
+30 kilometres marathon in Chefland.
+The participants receive medals on completing the marathon as following:
+
+If the total time taken is less than 
+3
+3 hours, they receive a GOLD medal.
+If the total time taken is greater than equal to 
+3
+3 hours but less than 
+6
+6 hours, they receive a SILVER medal.
+If the total time taken is greater than equal to 
+6
+6 hours, they receive a BRONZE medal.
+Chefina participated in the marathon and completed it in 
+𝑋
+X hours. Which medal would she receive?
+
+Input Format
+The input consists of a single integer 
+𝑋
+X — the number of hours Chefina took to complete the marathon.
+Output Format
+Output the medal Chefina would recieve.
+
+Note that you may print each character in uppercase or lowercase. For example, the strings GOLD, gold, Gold, and gOlD are considered the same.
+
+Constraints
+1
+≤
+𝑋
+≤
+10
+1≤X≤10.
+Sample 1:
+Input
+Output
+2
+GOLD
+Explanation:
+Chefina completed the marathon in less than 
+3
+3 hours. Thus, she gets a GOLD medal.
+
+Sample 2:
+Input
+Output
+5
+SILVER
+Explanation:
+Chefina took more than 
+3
+3 but less than 
+6
+6 hours. Thus, she gets a SILVER medal.
+
+Sample 3:
+Input
+Output
+6
+BRONZE
+Explanation:
+Chefina took 
+6
+6 hours to complete the marathon. Thus, she gets a BRONZE medal.
+ANSWER:
+n=int(input())
+if(n<3):print("GOLD")
+elif(n<6):print("SILVER")
+else:print("BRONZE")
+
+02)Just One More Episode
+Chef has to attend an exam that starts in 
+𝑋
+X minutes, but of course, watching shows takes priority.
+
+Every episode of the show that Chef is watching, is 
+24
+24 minutes long.
+If he starts watching a new episode now, will he finish watching it strictly before the exam starts?
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of one line of input, containing a single integer 
+𝑋
+X — the amount of time from now at which Chef's exam starts.
+Output Format
+For each test case, output on a new line the answer — YES if Chef will finish his episode before the exam starts, and NO otherwise.
+
+Each character of the output may be printed in either lowercase or uppercase, i.e, the string Yes, YES, yes, YeS` will all be treated as equivalent.
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+1
+≤
+𝑋
+≤
+100
+1≤X≤100
+Sample 1:
+Input
+Output
+4
+30
+23
+60
+24
+Yes
+No
+Yes
+No
+Explanation:
+Test case 
+1
+1: Chef has 
+30
+30 minutes of free time, which is easily enough to finish watching a 
+24
+24-minute episode. Hence, the answer is Yes.
+
+Test case 
+2
+2: Chef has 
+23
+23 minutes of free time, which is not enough to finish watching a 
+24
+24-minute episode. Hence, the answer is No.
+
+Test case 
+3
+3: Chef has 
+60
+60 minutes of free time, which is easily enough to finish watching a 
+24
+24-minute episode. Hence, the answer is Yes.
+
+Test case 
+4
+4: Chef has 
+24
+24 minutes of free time. He will finish watching the episode exactly when the exam starts, and not strictly before it. Hence, the answer is No.
+
+ANSWER:
+for i in range(int(input())):
+    t=int(input())
+    if t>24:
+        print("YES")
+    else:
+        print("NO")
+
+03)Mana Points
+Chef is playing a mobile game. In the game, Chef's character Chefario can perform special attacks. However, one special attack costs 
+𝑋
+X mana points to Chefario.
+
+If Chefario currently has 
+𝑌
+Y mana points, determine the maximum number of special attacks he can perform.
+
+Input Format
+The first line contains a single integer 
+𝑇
+T — the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two space-separated integers 
+𝑋
+X and 
+𝑌
+Y — the cost of one special attack and the number of mana points Chefario has initially.
+Output Format
+For each test case, output the maximum number of special attacks Chefario can perform.
+
+Constraints
+1
+≤
+𝑇
+≤
+1
+0
+5
+1≤T≤10 
+5
+ 
+1
+≤
+𝑋
+≤
+100
+1≤X≤100
+1
+≤
+𝑌
+≤
+1000
+1≤Y≤1000
+Sample 1:
+Input
+Output
+3
+10 30
+6 41
+50 2
+3
+6
+0
+Explanation:
+Test case 
+1
+1: Chefario can perform a maximum of 
+3
+3 special attacks which will cost him 
+30
+30 mana points.
+
+Test case 
+2
+2: Chefario can perform a maximum of 
+6
+6 special attacks which will cost him 
+36
+36 mana points. Note that Chefario can not perform 
+7
+7 special attacks as these will cost him 
+42
+42 mana points while he has only 
+41
+41 mana points.
+
+Test case 
+3
+3: Chefario will not be able to perform any special attacks in this case.
+
+ANSWER:
+t=int(input())
+for i in range(t):
+    x,y=map(int,input().split())
+    if x<=y:
+        print(y//x)
+    elif x>y:
+        print("0")
+    else:
+        print("0")
+
+04)Rain in Chefland
+In Chefland, precipitation is measured using a rain gauge in millimetre per hour.
+
+Chef categorises rainfall as:
+
+LIGHT, if rainfall is less than 
+3
+3 millimetre per hour.
+MODERATE, if rainfall is greater than equal to 
+3
+3 millimetre per hour and less than 
+7
+7 millimetre per hour.
+HEAVY if rainfall is greater than equal to 
+7
+7 millimetre per hour.
+Given that it rains at 
+𝑋
+X millimetre per hour on a day, find whether the rain is LIGHT, MODERATE, or HEAVY.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of a single integer 
+𝑋
+X — the rate of rainfall in millimetre per hour.
+Output Format
+For each test case, output on a new line, whether the rain is LIGHT, MODERATE, or HEAVY.
+
+You may print each character in lowercase or uppercase. For example, LIGHT, light, Light, and liGHT, are all identical.
+
+Constraints
+1
+≤
+𝑇
+≤
+20
+1≤T≤20
+1
+≤
+𝑋
+≤
+20
+1≤X≤20
+Sample 1:
+Input
+Output
+4
+1
+20
+3
+7
+LIGHT
+HEAVY
+MODERATE
+HEAVY
+Explanation:
+Test case 
+1
+1: The rate of precipitation is less than 
+3
+3. Thus, the rain is LIGHT.
+
+Test case 
+2
+2: The rate of precipitation is greater than equal to 
+7
+7. Thus, the rain is HEAVY.
+
+Test case 
+3
+3: The rate of precipitation is greater than equal to 
+3
+3 and less than 
+7
+7. Thus, the rain is MODERATE.
+
+Test case 
+4
+4: The rate of precipitation is greater than equal to 
+7
+7. Thus, the rain is HEAVY.
+
+ANSWER:
+for _ in range(int(input())):
+    a=int(input())
+    if(a<3):
+        print("LIGHT")
+    elif(a>=3 and a<7):
+        print("MODERATE")
+    else:
+        print("HEAVY")
+
+05)Bidding
+Alice, Bob and Charlie are bidding for an artifact at an auction.
+Alice bids 
+𝐴
+A rupees, Bob bids 
+𝐵
+B rupees, and Charlie bids 
+𝐶
+C rupees (where 
+𝐴
+A, 
+𝐵
+B, and 
+𝐶
+C are distinct).
+
+According to the rules of the auction, the person who bids the highest amount will win the auction.
+Determine who will win the auction.
+
+Input Format
+The first line contains a single integer 
+𝑇
+T — the number of test cases. Then the test cases follow.
+The first and only line of each test case contains three integers 
+𝐴
+A, 
+𝐵
+B, and 
+𝐶
+C, — the amount bid by Alice, Bob, and Charlie respectively.
+Output Format
+For each test case, output who (out of Alice, Bob, and Charlie) will win the auction.
+
+You may print each character of Alice, Bob, and Charlie in uppercase or lowercase (for example, ALICE, aliCe, aLIcE will be considered identical).
+
+Constraints
+1
+≤
+𝑇
+≤
+1000
+1≤T≤1000
+1
+≤
+𝐴
+,
+𝐵
+,
+𝐶
+≤
+1000
+1≤A,B,C≤1000
+𝐴
+A, 
+𝐵
+B, and 
+𝐶
+C are distinct.
+Sample 1:
+Input
+Output
+4
+200 100 400
+155 1000 566
+736 234 470
+124 67 2
+Charlie
+Bob
+Alice
+Alice
+Explanation:
+Test Case 
+1
+1: Charlie wins the auction since he bid the highest amount.
+
+Test Case 
+2
+2: Bob wins the auction since he bid the highest amount.
+
+Test Case 
+3
+3: Alice wins the auction since she bid the highest amount.
+
+Test Case 
+4
+4: Alice wins the auction since she bid the highest amount.
+
+ANSWER:
+t=int(input())
+for i in range(t):
+    a,b,c=map(int,input().split())
+    if a>b and a>c:
+        print("Alice")
+    elif b>c and b>a:
+        print("Bob")
+    else:
+        print("Charlie")
+
+06)Overspeeding Fine
+Chef was driving on a highway at a speed of 
+𝑋
+X km/hour.
+
+To avoid accidents, there are fine imposed on overspeeding as follows:
+
+No fine if the speed of the car 
+≤
+70
+≤70 km/hour.
+Rs 
+500
+500 fine if the speed of the car is strictly greater than 
+70
+70 and 
+≤
+100
+≤100.
+Rs 
+2000
+2000 fine if the speed of the car is strictly greater than 
+100
+100.
+Determine the fine Chef needs to pay.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of a single integer 
+𝑋
+X denoting the speed of Chef's car.
+Output Format
+For each test case, output the fine paid by Chef.
+
+Constraints
+1
+≤
+𝑇
+≤
+200
+1≤T≤200
+1
+≤
+𝑋
+≤
+200
+1≤X≤200
+Sample 1:
+Input
+Output
+7
+40
+110
+70
+100
+69
+101
+85
+0
+2000
+0
+500
+0
+2000
+500
+Explanation:
+Test case 
+1
+1: The speed is 
+≤
+70
+≤70. Thus, Chef does not need to pay any fine.
+
+Test case 
+2
+2: The speed is greater than 
+100
+100. Thus, Chef needs to pay 
+2000
+2000 as fine.
+
+Test case 
+3
+3: The speed is 
+≤
+70
+≤70. Thus, Chef does not need to pay any fine.
+
+Test case 
+4
+4: The speed is greater than 
+70
+70 and 
+≤
+100
+≤100. Thus, Chef needs to pay 
+500
+500 as fine amount.
+
+Test case 
+5
+5: The speed is 
+≤
+70
+≤70. Thus, Chef does not need to pay any fine.
+
+Test case 
+6
+6: The speed is greater than 
+100
+100. Thus, Chef needs to pay 
+2000
+2000 as fine.
+
+Test case 
+7
+7: The speed is greater than 
+70
+70 and 
+≤
+100
+≤100. Thus, Chef needs to pay 
+500
+500 as fine amount.
+
+ANSWER:
+t=int(input())
+for i in range(t):
+    x=int(input())
+    if x<=70:
+        print("0")
+    elif x>70 and x<=100:
+        print("500")
+    else:
+        print("2000")
+
+07)Chess Time
+Chef has recently started playing chess, and wants to play as many games as possible.
+
+He calculated that playing one game of chess takes at least 
+20
+20 minutes of his time.
+
+Chef has 
+𝑁
+N hours of free time. What is the maximum number of complete chess games he can play in that time?
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of a single line containing a single integer, 
+𝑁
+N.
+Output Format
+For each test case, output on a new line the maximum number of complete chess games Chef can play in 
+𝑁
+N hours.
+
+Constraints
+1
+≤
+𝑇
+≤
+10
+1≤T≤10
+1
+≤
+𝑁
+≤
+10
+1≤N≤10
+Sample 1:
+Input
+Output
+4
+1
+10
+7
+3
+3
+30
+21
+9
+Explanation:
+Test case 
+1
+1: If every game Chef plays takes 
+20
+20 minutes, he can play 
+3
+3 games in one hour.
+
+Test case 
+2
+2: If every game Chef plays takes 
+20
+20 minutes, he can play 
+30
+30 games in 
+10
+10 hours.
+
+Test case 
+3
+3: If every game Chef plays takes 
+20
+20 minutes, he can play 
+21
+21 games in 
+7
+7 hours.
+4
+4: If every game Chef plays takes 
+20
+20 minutes, he can play 
+9
+9 games in 
+3
+3 hours.
+
+ANSWER:
+Test t=int(input())
+for i in range (t):
+    n=int(input())
+    n=n*60
+    c=n//20
+    print(c)case 
+
+08)Passes for Fair
+There is a fair going on in Chefland. Chef wants to visit the fair along with his 
+𝑁
+N friends. Chef manages to collect 
+𝐾
+K passes for the fair. Will Chef be able to enter the fair with all his 
+𝑁
+N friends?
+
+A person can enter the fair using one pass, and each pass can be used by only one person.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of a single line containing two space-separated integers 
+𝑁
+,
+𝐾
+N,K.
+Output Format
+For each test case, print on a new line YES if Chef will be able to enter the fair with all his 
+𝑁
+N friends and NO otherwise.
+
+You may print each character of the string in either uppercase or lowercase (for example, the strings yEs, yes, Yes, and YES will all be treated as identical).
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+1
+≤
+𝑁
+,
+𝐾
+≤
+100
+1≤N,K≤100
+Sample 1:
+Input
+Output
+4
+5 8
+6 3
+2 2
+1 2
+YES
+NO
+NO
+YES
+Explanation:
+Test case 
+1
+1: Chef needs 
+5
+5 passes for his friends and one pass for himself and he collected 
+8
+8 passes. Thus he will be able to enter the fair with all his friends.
+
+Test case 
+2
+2: Chef needs 
+6
+6 passes for his friends and one pass for himself while he collected only 
+3
+3 passes. Thus he will not be able to enter the fair with all his friends, only three of them can enter the fair.
+
+Test case 
+3
+3: Chef needs 
+2
+2 passes for his friends and one pass for himself while he collected only 
+2
+2 passes. Thus either Chef or one of his friends can't enter the fair.
+
+Test case 
+4
+4: Chef needs a total of 
+2
+2 passes, one for himself and one for his friend. He collected 
+2
+2 passes. Thus he will be able to enter the fair with his friend.
+
+ANSWER:
+t=int(input())
+for i in range(t):
+    n,k=map(int,input().split())
+    if(n+1<=k):
+        print("YES")
+    else:
+        print("NO")
+09)Read Pages
+Chef has started studying for the upcoming test. The textbook has 
+𝑁
+N pages in total. Chef wants to read at most 
+𝑋
+X pages a day for 
+𝑌
+Y days.
+
+Find out whether it is possible for Chef to complete the whole book.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+The first and only line of each test case contains three space-separated integers 
+𝑁
+,
+𝑋
+,
+N,X, and 
+𝑌
+Y — the number of pages, the number of pages Chef can read in a day, and the number of days.
+Output Format
+For each test case, output on a new line, YES, if Chef can complete the whole book in given time, and NO otherwise.
+
+You may print each character of the string in uppercase or lowercase. For example, Yes, YES, yes, and yES are all considered identical.
+
+Constraints
+1
+≤
+𝑇
+≤
+1000
+1≤T≤1000
+1
+≤
+𝑁
+≤
+100
+1≤N≤100
+1
+≤
+𝑋
+,
+𝑌
+≤
+10
+1≤X,Y≤10
+Sample 1:
+Input
+Output
+4
+5 2 3
+10 3 3
+7 7 1
+3 2 1
+YES
+NO
+YES
+NO
+Explanation:
+Test case 
+1
+1: Chef can read two pages on the first day, two on the second day, and the remaining one on the third day.
+
+Test case 
+2
+2: Chef cannot complete all ten pages in three days.
+
+Test case 
+3
+3: Chef can read all seven pages in one day.
+
+Test case 
+4
+4: Chef cannot complete all three pages in one day.
+
+ANSWER:
+t=int(input())
+for t in range(t):
+    x,y,z=map(int,input().split())
+    a=y*z
+    if a>=x:
+        print("yes")
+    else:
+        print("no")
+
+10)Couple Game
+There are 
+𝐺
+G girl and 
+𝐵
+B boy students at IIT (BHU) such that 
+𝐵
+>
+𝐺
+B>G.
+
+If ICM were a team game where teams could only be of size 
+2
+2, having exactly 
+1
+1 girl student and 
+1
+1 boy student, what would be the minimum number of boy students from IIT (BHU) who would not be able to participate?
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+The first and only line of each test case contains two space-separated integers 
+𝐺
+G and 
+𝐵
+B, the number of girl and boy students at IIT (BHU) respectively.
+Output Format
+For each test case, output a single integer on a new line, the minimum number of boy students from IIT (BHU) who would not be able to participate.
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+1
+≤
+𝐺
+<
+𝐵
+≤
+100
+1≤G<B≤100
+Sample 1:
+Input
+Output
+3
+1 3
+2 4
+3 10
+2
+2
+7
+Explanation:
+Test case 
+1
+1: There is only 
+1
+1 girl and 
+3
+3 boys. So, one team can be formed, and minimum 
+2
+2 boys will be left behind.
+
+Test case 
+2
+2: There are 
+2
+2 girls and 
+4
+4 boys. So, maximum 
+2
+2 teams can be formed, and minimum 
+2
+2 boys will be left behind.
+
+Test case 
+3
+3: There are 
+3
+3 girls and 
+10
+10 boys. So, maximum 
+3
+3 teams can be formed, and minimum 
+7
+7 boys will be left behind.
+
+ANSWER:
+T=int(input())
+for i in range(T):
+    G,B=map(int,input().split())
+    print(B-G)
